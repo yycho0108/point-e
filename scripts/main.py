@@ -22,14 +22,15 @@ def cloud_to_mesh():
 
 
 def main():
-    seed: int = 1
-    num: int = 4
+    seed: int = 3
+    num: int = 1
     # text: str = 'One corgi wearing a red santa hat in a white background'
     # text: str = '3d rendering of one corgi in a white background'
     # text: str = 'A household object that can turn bolts'
     # text:str = 'Household object that can be improvised to open a wine bottle.'
     # text: str = 'One flathead screwdriver in a white background'
-    text: str = 'Image of a single flathead screwdriver'
+    # text: str = 'Photo of a butter knife, white background, full object'
+    text: str = 'Photo of a pair of pliers, white background, full object'
     num_step: int = 100
     device: str = 'cuda:0'
     out_dir: str = '/tmp/out'
@@ -65,7 +66,10 @@ def main():
                                   num=num,
                                   device=device,
                                   guidance_scale=guidance_scale,
-                                  num_inference_steps=num_step
+                                  num_inference_steps=num_step,
+                                  # possible?
+                                  width=768,
+                                  height=768
                                   )
 
         # [dummy]
